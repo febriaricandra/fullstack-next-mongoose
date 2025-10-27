@@ -38,6 +38,15 @@ src/
 2. **Konfigurasi environment**
    - Buat file `.env.local` dan isi variabel yang dibutuhkan (contoh: koneksi MongoDB, API key Xendit, dsb).
 
+   Contoh isi file `.env.local`:
+   ```env
+   # Contoh .env.local
+   MONGODB_URI=mongodb+srv://user:password@cluster.mongodb.net/dbname
+   XENDIT_API_KEY=your_xendit_api_key
+   WHATSAPP_API_KEY=your_whatsapp_api_key
+   NEXTAUTH_SECRET=your_nextauth_secret
+   ```
+
 3. **Jalankan development server**
    ```bash
    npm run dev
