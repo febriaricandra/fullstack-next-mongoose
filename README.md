@@ -1,40 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Next Store
 
-## Getting Started
+Next Store adalah aplikasi toko online modern berbasis [Next.js](https://nextjs.org/) dengan dukungan admin panel, manajemen produk, transaksi, pembayaran, dan autentikasi multi-faktor.
 
-First, run the development server:
+## Fitur Utama
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Frontend & Backend Terintegrasi**: Menggunakan Next.js App Router.
+- **Manajemen Produk**: CRUD produk untuk admin.
+- **Transaksi & Pembayaran**: Checkout, status pembayaran, dan integrasi payment gateway (Xendit).
+- **Autentikasi & MFA**: Login, register, OTP, dan verifikasi multi-faktor.
+- **Admin Panel**: Kelola produk, transaksi, dan pengguna.
+- **Notifikasi WhatsApp**: Integrasi pengiriman notifikasi via WhatsApp.
+- **Database**: MongoDB untuk penyimpanan data.
+
+## Struktur Proyek
+
+```
+src/
+  app/
+    (admin)/admin/         # Halaman admin (produk, transaksi, users)
+    (main)/                # Halaman utama user (produk, cart, payment)
+    api/                   # API routes (auth, orders, payment, webhook, dsb)
+  components/              # Komponen UI (table, sidebar, form, dsb)
+  lib/                     # Helper & utilitas (cart, payment, WhatsApp, dsb)
+  models/                  # Skema data (Product, User, Order, dsb)
+  styles/                  # File CSS global
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalasi & Menjalankan
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. **Clone repo & install dependencies**
+   ```bash
+   git clone https://github.com/febriaricandra/fullstack-next-mongoose.git
+   cd store-next
+   npm install
+   ```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+2. **Konfigurasi environment**
+   - Buat file `.env.local` dan isi variabel yang dibutuhkan (contoh: koneksi MongoDB, API key Xendit, dsb).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+3. **Jalankan development server**
+   ```bash
+   npm run dev
+   ```
+   Buka [http://localhost:3000](http://localhost:3000) di browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Script Penting
 
-## Learn More
+- `npm run dev` — Menjalankan server development
+- `npm run build` — Build aplikasi untuk production
+- `npm start` — Menjalankan server production
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Deploy dengan mudah ke [Vercel](https://vercel.com/) atau platform lain yang mendukung Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Kontribusi
 
-## Deploy on Vercel
+Pull request dan issue sangat diterima! Silakan fork repo ini dan ajukan perubahan.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Lisensi
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+MIT
